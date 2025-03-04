@@ -64,5 +64,5 @@ document.querySelector('.submit-btn').addEventListener('click', function (e) {
   }
 
   // Redirect to something.html after successful submission
-  window.location.href = 'something.html'; // Ensure this is the correct path
+  window.location.href = 'dashboard.html'; 
 });
