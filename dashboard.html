@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="settings-container">
+        <div class="profile-container">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="./pp1.jpg" alt="Profile picture of John Doe" id="profilePic">
+                    <div class="edit-icon" title="Change profile picture">
+                        <label for="fileInput" aria-label="Change profile picture">
+                            <i class="fas fa-camera"></i>
+                        </label>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="changeProfilePicture(event)">
+                </div>
+                <div class="user-info">
+                    <h3 class="username" id="usernameText">John Doe</h3>
+                    <p class="email" id="emailText">johndoe@example.com</p>
+                    <p class="bio" id="bioText">This is a short bio about the user.</p>
+                    <div class="user-details">
+                        <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+                        <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+                        <p><i class="fas fa-briefcase"></i> Software Engineer</p>
+                        <p><i class="fas fa-calendar-alt"></i> Joined January 2020</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-content">
+            <div class="settings-section">
+                <h2>Account Settings</h2>
+                <form id="settingsForm">
+                    <div class="setting-item">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" value="John Doe">
+                    </div>
+                    <div class="setting-item">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" value="johndoe@example.com">
+                    </div>
+                    <div class="setting-item">
+                        <label for="bio" class="form-label">Bio</label>
+                        <textarea id="bio" name="bio" class="form-control" placeholder="Enter a short bio" rows="4">This is a short bio about the user.</textarea>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Account Centre</h5>
+                                    <p class="card-text">Manage your connected accounts, passwords, and linked apps.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Archive</h5>
+                                    <p class="card-text">View your archived posts and stories.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Your Activity</h5>
+                                    <p class="card-text">Manage your activity log, search history, and interactions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Notifications</h5>
+                                    <p class="card-text">Control how you receive notifications from Instagram.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-item mt-4">
+                        <label for="languageSelect" class="form-label">Language</label>
+                        <select id="languageSelect" class="form-select">
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="French">French</option>
+                            <option value="German">German</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item mt-4">
+                        <h3>Change Password</h3>
+                        <p>If you want to change your password, click below.</p>
+                        <button type="button" class="btn btn-primary change-password-btn">Change Password</button>
+                    </div>
+                    
+                    <div class="setting-item mt-4">
+                        <button type="button" id="saveChangesBtn" class="btn btn-primary">Save Changes</button>
+                    </div>
+
+                    <div class="setting-item mt-4 delete-account">
+                        <button type="button" class="btn btn-danger delete-btn">Delete Account</button>
+                    </div>
+                </form>
+                <div id="loadingIndicator" style="display:none;">Saving...</div>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+    
+</body>
+</html>
