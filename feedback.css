@@ -1,0 +1,205 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dual-tone Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+  }
+  
+  .feedback-container {
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Left Half (Feedback Form) */
+  .left-half {
+    width: 50%;
+    padding: 40px;
+    background: #fff;
+  }
+  
+  /* Title Section */
+  .title-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .title-section h1 {
+    font-size: 2.5rem;
+    color: #6a11cb; /* Primary Color */
+    margin-bottom: 10px;
+  }
+  
+  .title-section p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Add Questions Section */
+  .add-questions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: #6a11cb; /* Primary Color */
+  }
+  
+  .add-questions .material-icons {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .add-questions span {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  /* Review Section */
+  .review-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: #6a11cb; /* Primary Color */
+  }
+  
+  .review-section .material-icons {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .review-section span {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  /* Rating Section */
+  .rating-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .rating-section h2 {
+    font-size: 1.8rem;
+    color: #6a11cb; /* Primary Color */
+    margin-bottom: 20px;
+  }
+  
+  .emoji-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .emoji {
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6;
+  }
+  
+  .emoji:hover {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  
+  .emoji.active {
+    opacity: 1;
+  }
+  
+  /* Submit Button */
+  .submit-section {
+    text-align: center;
+  }
+  
+  .submit-btn {
+    background: #6a11cb; /* Primary Color */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background: #2575fc; /* Secondary Color */
+  }
+  
+  /* Paragraph Space at the End */
+  .paragraph-space {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .paragraph-space p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Right Half (Choose from Gallery) */
+  .right-half {
+    width: 50%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dual-tone Gradient */
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .photo-upload-section {
+    text-align: center;
+  }
+  
+  .photo-upload-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .upload-box {
+    border: 2px dashed #fff;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .upload-box:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .upload-box .material-icons {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .upload-box label {
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .photo-preview {
+    margin-top: 20px;
+  }
+  
+  .photo-preview img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
