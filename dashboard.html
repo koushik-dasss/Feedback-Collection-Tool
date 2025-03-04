@@ -4,13 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings Page</title>
-    <link rel="stylesheet" href="dashboard.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .settings-container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        max-height: 90vh; /* Prevents page scroll */
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .profile-container {
+        width: 30%;
+        padding: 30px;
+        text-align: center;
+        background-color: #fff;
+        border-right: 2px solid #e0e0e0;
+    }
+
+    .profile-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #e0e0e0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .edit-icon {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: #2575fc;
+        color: white;
+        padding: 8px; /* Smaller size */
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px; /* Smaller size */
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border: 3px solid #fff;
+    }
+
+    .edit-icon:hover {
+        background-color: #1a5bbf;
+        transform: scale(1.1);
+    }
+
+    .user-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .username {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .email {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .bio {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .user-details {
+        text-align: left;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .user-details p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .user-details p i {
+        margin-right: 10px;
+        color: #2575fc;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        color: #2575fc;
+        font-size: 20px;
+        transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+        color: #1a5bbf;
+    }
+
+    .settings-content {
+        width: 70%;
+        background: #fff;
+        padding: 30px;
+        overflow-y: auto;
+        height: auto; /* Adjust height as needed */
+        box-sizing: border-box;
+    }
+
+    .settings-section {
+        padding-right: 15px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #333;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 10px;
+    }
+
+    .setting-item {
+        margin-bottom: 20px;
+    }
+
+    .setting-item label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .setting-item input,
+    .setting-item textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #555;
+        transition: border-color 0.3s ease;
+    }
+
+    .setting-item input:focus,
+    .setting-item textarea:focus {
+        border-color: #2575fc;
+        outline: none;
+    }
+
+    .setting-item button {
+        width: 100%;
+        padding: 12px;
+        background-color: #2575fc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .setting-item button:hover {
+        background-color: #1a5bbf;
+    }
+
+    @media (max-width: 768px) {
+        .settings-container {
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+        }
+
+        .profile-container,
+        .settings-content {
+            width: 100%;
+            border-right: none;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+        }
+
+        .setting-item input,
+        .setting-item textarea,
+        .setting-item button {
+            font-size: 14px;
+        }
+    }
+</style>
 <body>
     <div class="settings-container">
         <div class="profile-container">
@@ -124,7 +366,55 @@
             </div>
         </div>
     </div>
-    <script src="dashboard.js"></script>
-    
+
+    <script>
+        // Function to change the profile picture when a new image is selected
+        function changeProfilePicture(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                // Corrected line: Use arrow function to preserve 'this' context
+                reader.onload = () => { 
+                    document.getElementById('profilePic').src = reader.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // jQuery for handling save changes functionality
+        $(document).ready(function() {
+            // When the save changes button is clicked
+            $('#saveChangesBtn').on('click', function() {
+                // Show loading indicator
+                $('#loadingIndicator').show();
+
+                // Get the values from the form inputs
+                const username = $('#username').val();
+                const email = $('#email').val();
+                const bio = $('#bio').val();
+                const language = $('#languageSelect').val();
+
+                // Simulate saving data (for example, using AJAX to save it)
+                setTimeout(function() {
+                    // Update the profile info dynamically without reloading the page
+                    $('#usernameText').text(username);
+                    $('#emailText').text(email);
+                    $('#bioText').text(bio);
+
+                    // Hide loading indicator
+                    $('#loadingIndicator').hide();
+
+                    // Show success message
+                    alert('Profile updated successfully!');
+                }, 2000); // Simulate a 2-second delay for saving the changes
+            });
+
+            // Handle the change password button (for future implementation)
+            $('.change-password-btn').on('click', function() {
+                alert('Change Password functionality will be implemented here!');
+            });
+        });
+    </script>
 </body>
 </html>
